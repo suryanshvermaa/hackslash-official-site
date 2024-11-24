@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hackslash-app
+  namespace: hackslash
+  labels:
+    app: hackslash-app
+spec:
+  selector:
+    matchLabels:
+      app: hackslash-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hackslash-app
+    spec:
+      containers:
+      - name: hackslash-app
+        image: suryanshverma/hackslash-web-app:latest
+        env:
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: hackslash-app
+              key: JWT_SECRET
+        - name: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: hackslash-app
+              key: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+        - name: NEXT_PUBLIC_CLOUDINARY_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: hackslash-app
+              key: NEXT_PUBLIC_CLOUDINARY_API_KEY
+        - name: CLOUDINARY_API_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: hackslash-app
+              key: CLOUDINARY_API_SECRET
+        - name: MONGO_USER
+          valueFrom:
+            secretKeyRef:
+              name: hackslash-app
+              key: MONGO_USER
+        - name: MONGO_PASS
+          valueFrom:
+            secretKeyRef:
+              name: hackslash-app
+              key: MONGO_PASS
+        - name: MONGO_URL
+          valueFrom:
+            configMapKeyRef:
+              name: hackslash-app
+              key: MONGO_URL
+
+        resources:
+          requests:
+            memory: "400Mi"
+            cpu: "400m"
+          limits:
+            memory: "400Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

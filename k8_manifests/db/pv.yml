@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  namespace: hackslash
+  name: mongo-pv-hackslash
+spec:
+  capacity:
+    storage: "1Gi"
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: Users/surya/OneDrive/Desktop/Team405_Tasks/hackslash-official-site/data

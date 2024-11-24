@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  hackslash-app:
+    build: ./
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_USER: root
+      MONGO_PASS: root
+      MONGO_URL: "mongodb://mongo:27017"
+      CLOUDINARY_API_SECRET: S5F3HVcYWHNBkOGHuH0XtGq6mjI
+      JWT_SECRET: JNajsd98hjd8scsdh8b99sjd
+      NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: dzgqb4bb6
+      NEXT_PUBLIC_CLOUDINARY_API_KEY: 454748532399344
+    networks:
+      - hackslash-network
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:8.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    networks:
+      - hackslash-network
+networks:
+  hackslash-network:
