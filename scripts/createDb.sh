@@ -1,0 +1,2 @@
+#!/bin/bash
+kubectl $1 -f ../k8_manifests/db/pv.yml -f ../k8_manifests/db/pvc.yml -f ../k8_manifests/db/secrets.yml -f ../k8_manifests/db/deployment.yml -f ../k8_manifests/db/svc.yml >> ./logs/db.log.txt

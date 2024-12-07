@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: hackslash-app
+  name: hackslash-cm
   namespace: hackslash
 data:
-  NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: dzgqb4bb6
-  MONGO_URL: mongodb://mongo-svc:27017
+  cloudinary-cloud: dzgqb4bb6
+  mongo-url: mongodb://mongo-svc:27017

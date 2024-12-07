@@ -1,0 +1,25 @@
+persistentvolume "mongo-pvc-h" deleted
+persistentvolumeclaim "mongo-pvc-h" deleted
+secret "mongo-s" deleted
+deployment.apps "mongodb-depl" deleted
+service "mongo-svc" deleted
+persistentvolume/mongo-pvc-h created
+persistentvolumeclaim/mongo-pvc-h created
+secret/mongo-s created
+deployment.apps/mongodb-depl created
+service/mongo-svc created
+persistentvolume "mongo-pvc-h" deleted
+persistentvolumeclaim "mongo-pvc-h" deleted
+secret "mongo-s" deleted
+deployment.apps "mongodb-depl" deleted
+service "mongo-svc" deleted
+persistentvolume/mongo-pvc-h created
+persistentvolumeclaim/mongo-pvc-h created
+secret/mongo-s created
+deployment.apps/mongodb-depl created
+service/mongo-svc created
+persistentvolumeclaim "mongo-pvc-h" deleted
+secret "mongo-s" deleted
+deployment.apps "mongodb-depl" deleted
+service "mongo-svc" deleted
+persistentvolume "mongo-pvc-h" deleted

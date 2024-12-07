@@ -5,7 +5,8 @@ metadata:
   namespace: hackslash
 spec:
   selector:
-    app: mongodb
+    app: mongodb-depl
+  type: ClusterIP
   ports:
   - name: mongo-svc
     protocol: TCP

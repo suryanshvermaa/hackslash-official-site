@@ -22,45 +22,45 @@ spec:
         - name: JWT_SECRET
           valueFrom:
             secretKeyRef:
-              name: hackslash-app
-              key: JWT_SECRET
+              name: hackslash-secret
+              key: jwt-secret
         - name: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
           valueFrom:
             configMapKeyRef:
-              name: hackslash-app
-              key: NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
+              name: hackslash-cm
+              key: cloudinary-cloud
         - name: NEXT_PUBLIC_CLOUDINARY_API_KEY
           valueFrom:
             secretKeyRef:
-              name: hackslash-app
-              key: NEXT_PUBLIC_CLOUDINARY_API_KEY
+              name: hackslash-secret
+              key: next-cloudinary-api
         - name: CLOUDINARY_API_SECRET
           valueFrom:
             secretKeyRef:
-              name: hackslash-app
-              key: CLOUDINARY_API_SECRET
+              name: hackslash-secret
+              key:  cloudinary-api
         - name: MONGO_USER
           valueFrom:
             secretKeyRef:
-              name: hackslash-app
-              key: MONGO_USER
+              name: hackslash-secret
+              key: user
         - name: MONGO_PASS
           valueFrom:
             secretKeyRef:
-              name: hackslash-app
-              key: MONGO_PASS
+              name: hackslash-secret
+              key: pass
         - name: MONGO_URL
           valueFrom:
             configMapKeyRef:
-              name: hackslash-app
-              key: MONGO_URL
+              name: hackslash-cm
+              key: mongo-url
 
         resources:
           requests:
-            memory: "400Mi"
-            cpu: "400m"
+            memory: "2000Mi"
+            cpu: "2000m"
           limits:
-            memory: "400Mi"
-            cpu: "500m"
+            memory: "2000Mi"
+            cpu: "2000m"
         ports:
         - containerPort: 3000

@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 
+
 const connection = {}
 
 export const connectToDb = async () => {
@@ -11,7 +12,7 @@ export const connectToDb = async () => {
         const user=process.env.MONGO_USER;
         const pass=process.env.MONGO_PASS;
            
-        const db = await mongoose.connect(process.env.MONGO_URL,{user,pass});
+        const db = await mongoose.connect(process.env.MONGO_URL);
         console.log("New connection | Connected to DB");
         connection.isConnected = db.connections[0].readyState;
         // console.log(connection);

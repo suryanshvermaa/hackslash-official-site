@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   namespace: hackslash
-  name: mongo-pv-hackslash
+  name: mongo-pvc-h
 spec:
   capacity:
     storage: "1Gi"

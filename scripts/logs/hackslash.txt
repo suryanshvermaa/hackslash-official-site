@@ -1,0 +1,20 @@
+configmap "hackslash-cm" deleted
+secret "hackslash-secret" deleted
+deployment.apps "hackslash-app" deleted
+service "hackslash-app" deleted
+configmap/hackslash-cm created
+secret/hackslash-secret created
+deployment.apps/hackslash-app created
+service/hackslash-app created
+configmap "hackslash-cm" deleted
+secret "hackslash-secret" deleted
+deployment.apps "hackslash-app" deleted
+service "hackslash-app" deleted
+configmap/hackslash-cm created
+secret/hackslash-secret created
+deployment.apps/hackslash-app created
+service/hackslash-app created
+configmap "hackslash-cm" deleted
+secret "hackslash-secret" deleted
+deployment.apps "hackslash-app" deleted
+service "hackslash-app" deleted
